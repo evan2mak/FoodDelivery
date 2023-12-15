@@ -1,0 +1,49 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".CheckoutFragment">
+
+    <!-- Food Items RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewFoodItems"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/checkout_food_item" />
+
+    <!-- Delivery Address EditText -->
+    <EditText
+        android:id="@+id/etDeliveryAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Delivery Address"
+        android:layout_margin="16dp" />
+
+    <!-- Special Instructions EditText -->
+    <EditText
+        android:id="@+id/etSpecialInstructions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Special Instructions"
+        android:layout_margin="16dp" />
+
+    <!-- Modify Order Button -->
+    <Button
+        android:id="@+id/btnModifyOrder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Modify Order"
+        android:layout_margin="16dp" />
+
+    <!-- Place Order Button -->
+    <Button
+        android:id="@+id/btnPlaceOrder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Place Order"
+        android:layout_margin="16dp" />
+</LinearLayout>

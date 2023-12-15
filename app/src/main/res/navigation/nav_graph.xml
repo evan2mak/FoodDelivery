@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/userScreenFragment">
+
+    <fragment
+        android:id="@+id/userScreenFragment"
+        android:name="evtomak.iu.edu.fooddelivery.UserScreen"
+        android:label="User Screen"
+        tools:layout="@layout/fragment_user_screen">
+
+        <action
+            android:id="@+id/action_userScreenFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="evtomak.iu.edu.fooddelivery.HomeFragment"
+        android:label="Home Fragment"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_homeFragment_to_userScreenFragment"
+            app:destination="@id/userScreenFragment" />
+
+        <action
+            android:id="@+id/action_homeFragment_to_restaurantFragment"
+            app:destination="@id/restaurantFragment" />
+
+        <action
+            android:id="@+id/action_homeFragment_to_recentOrdersFragment"
+            app:destination="@id/ordersFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/restaurantFragment"
+        android:name="evtomak.iu.edu.fooddelivery.RestaurantFragment"
+        android:label="Restaurant"
+        tools:layout="@layout/fragment_restaurant">
+
+        <action
+            android:id="@+id/action_restaurantFragment_to_checkoutFragment"
+            app:destination="@id/checkoutFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/allRestaurantsFragment"
+        android:name="evtomak.iu.edu.fooddelivery.AllRestaurantsFragment"
+        android:label="All Restaurants Fragment"
+        tools:layout="@layout/fragment_all_restaurants">
+
+        <action
+            android:id="@+id/action_allRestaurantsFragment_to_restaurantFragment"
+            app:destination="@id/restaurantFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/recentRestaurantsFragment"
+        android:name="evtomak.iu.edu.fooddelivery.RecentRestaurantsFragment"
+        android:label="Recent Restaurants Fragment"
+        tools:layout="@layout/fragment_recent_restaurants">
+
+        <action
+            android:id="@+id/action_recentRestaurantsFragment_to_restaurantFragment"
+            app:destination="@id/restaurantFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/checkoutFragment"
+        android:name="evtomak.iu.edu.fooddelivery.CheckoutFragment"
+        android:label="Checkout Fragment"
+        tools:layout="@layout/fragment_checkout" >
+        <action
+            android:id="@+id/action_checkoutFragment_to_order_screen_Fragment"
+            app:destination="@id/orderScreenFragment" />
+        <action
+            android:id="@+id/action_checkoutFragment_to_restaurantFragment"
+            app:destination="@id/restaurantFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ordersFragment"
+        android:name="evtomak.iu.edu.fooddelivery.RecentOrdersFragment"
+        android:label="Orders Fragment"
+        tools:layout="@layout/fragment_orders" >
+        <action
+            android:id="@+id/action_orders_Fragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/orderScreenFragment"
+        android:name="evtomak.iu.edu.fooddelivery.OrderScreenFragment"
+        android:label="Order Fragment"
+        tools:layout="@layout/fragment_order_screen" >
+        <action
+            android:id="@+id/action_order_screen_Fragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/calendarViewFragment"
+        android:name="evtomak.iu.edu.fooddelivery.CalendarViewFragment"
+        android:label="Calendar View Fragment"
+        tools:layout="@layout/fragment_calendar_view">
+        <action
+            android:id="@+id/calendarViewFragment_to_Home"
+            app:destination="@id/homeFragment" />
+    </fragment>
+</navigation>

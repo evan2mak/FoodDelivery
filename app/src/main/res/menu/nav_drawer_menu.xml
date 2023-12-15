@@ -1,0 +1,17 @@
+<!-- res/menu/nav_drawer_menu.xml -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_home"
+        android:title="Home" />
+    <item
+        android:id="@+id/nav_recent_orders"
+        android:title="Recent Orders" />
+
+    <item
+        android:id="@+id/nav_calendar_view"
+        android:title="Calendar View" />
+
+    <item
+        android:id="@+id/nav_sign_out"
+        android:title="Sign Out" />
+</menu>

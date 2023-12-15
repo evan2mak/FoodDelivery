@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "506140882920",
+    "project_id": "fooddelivery-3141c",
+    "storage_bucket": "fooddelivery-3141c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:506140882920:android:7b2f2d1ddf7db7d51dd65d",
+        "android_client_info": {
+          "package_name": "evtomak.iu.edu.fooddelivery"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAb1pN2YD0Oxis8E7DAz6ORex1VjZpPgnw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
