@@ -51,3 +51,29 @@ The functionality is described in more detail below:
 
 ## Checkout Screen
 
+[X] The checkout screen is where the user checks out.
+
+[X] The items that they selected on the page before display here. You can adjust the quantities here too.
+
+[X] You can also add a delivery address and/or special instructions.
+
+[X] You can also go back to the restaurant screen using the modify button to modify your order.
+
+[X] Lastly, you can place the order.
+
+[X] When you place the order, it is saved in the Recent Orders tab on the Home screen. Also, a running clock starts, and a notification will be sent to you shortly when your food is delivered.
+
+[X] You now move onto the Order screen.
+
+
+## Order Screen
+
+[X] The order screen shows your placed order. It shows the restaurant name, order details like food name and quantity, the total price, delivery address and special instructions, and your order time.
+
+[X] You can then click the Home button to go back to the home screen, or you can click the Track Order button which displays a map of your order route.
+
+## 
+
+The following functions/extensions are implemented:
+
+
