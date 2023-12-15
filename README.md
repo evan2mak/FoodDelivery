@@ -78,7 +78,107 @@ The following functions/extensions are implemented:
 
 ## AllRestaurantsAdapter
 
+Manages the RecyclerView adapter for displaying a list of restaurants.
 
+OnItemClickListener: Interface to handle item click events in the RecyclerView.
+
+ViewHolder: Holds the views for each item in the RecyclerView.
+
+onCreateViewHolder: Creates a new ViewHolder instance for each item in the RecyclerView.
+
+onBindViewHolder: Binds data to the ViewHolder for a specific item in the RecyclerView.
+
+getItemCount: Returns the total number of items in the RecyclerView.
+
+## AllRestaurantsFragment
+
+Fragment responsible for displaying a list of all restaurants.
+
+## CalendarViewFragment
+
+Fragment responsible for displaying a calendar view and calculating total spent per day.
+
+onCreateView: Inflates the fragment's layout and sets up the calendar view and button click listener.
+
+calculateTotalSpent: Calculates the total amount spent by the user on a selected date range.
+
+showTotalSpent: Displays the total amount spent as a toast message.
+
+onDestroyView: Removes the ValueEventListener to prevent memory leaks when the fragment is destroyed.
+
+## CheckoutFoodItemAdapter
+
+Manages the RecyclerView adapter for displaying food items in the checkout screen.
+
+onCreateViewHolder: Creates a new ViewHolder instance for each item in the RecyclerView.
+
+onBindViewHolder: Binds data to the ViewHolder for a specific item in the RecyclerView.
+
+getItemCount: Returns the total number of food items in the RecyclerView.
+
+# CheckoutFragment
+
+Fragment responsible for managing the checkout process.
+
+calculateTotalAmount: Calculates the total amount for the food items in the order.
+
+startDeliveryTimer: Initiates the delivery timer and service.
+
+createDeliveryNotification: Creates a delivery notification.
+
+## DeliveryService
+
+A background service for simulating food delivery with a timer.
+
+## FoodItemAdapter
+
+Manages the RecyclerView adapter for displaying food items.
+
+onCreateViewHolder: Creates a new ViewHolder instance for each item in the RecyclerView.
+
+onBindViewHolder: Binds data to the ViewHolder for a specific item in the RecyclerView.
+
+getItemCount: Returns the total number of food items in the RecyclerView.
+
+## HomeFragment
+
+Represents the home screen of the application.
+
+onCreateView: 
+
+Initialize RecentRestaurantsFragment and replace the corresponding container.
+Initialize AllRestaurantsFragment and replace the corresponding container.
+Set navigation item selection listener.
+
+## MainActivity 
+
+The primary activity that manages navigation and Firebase authentication.
+
+onCreate: Initializes components and sets up navigation based on authentication status.
+
+## Order
+
+Order data class.
+
+## OrderItem
+
+Order item data class.
+
+## OrdersAdapter
+
+Manages the RecyclerView adapter for displaying orders.
+
+setOrders: Update the list of orders and notify the adapter of data changes.
+
+onCreateViewHolder: Create a new OrderViewHolder instance for each item in the RecyclerView.
+
+onBindViewHolder: Bind data to the OrderViewHolder for a specific order in the RecyclerView.
+
+getItemCount: Return the total number of orders in the RecyclerView.
+
+getOrderDetails: Get a formatted string representing order details.
+
+formatOrderTime: Format the order time as a string.
 
 ## User
 
