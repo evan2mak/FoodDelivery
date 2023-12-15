@@ -180,6 +180,50 @@ getOrderDetails: Get a formatted string representing order details.
 
 formatOrderTime: Format the order time as a string.
 
+## OrderScreenFragment
+
+Displays order details and allows tracking of orders.
+
+getOrderDetails: Get a formatted string representing order details.
+
+formatOrderTime: Format the order time as a string.
+
+showTrackOrderDialog: Display a dialog for tracking the order.
+
+## OrderViewModel
+
+Manages order-related data for the application.
+
+## RecentOrdersFragment
+
+Fragment responsible for displaying the user's recent orders.
+
+loadOrders(): Query the database to retrieve the user's orders
+
+## RecentRestaurantsAdapter
+
+Adapter for displaying recent restaurant items in a RecyclerView.
+
+## RecentRestaurantsFragment
+
+Fragment for displaying recent restaurant items and navigating to restaurant details.
+
+## Restaurant
+
+Restaurant data class.
+
+## RestaurantFragment
+
+Fragment for displaying restaurant details and food items.
+
+loadFoodItems(): Function to load food items from Firebase.
+
+getRestaurantImages(): Function to retrieve restaurant images based on restaurant ID.
+
+## RestaurantImagesAdapter:
+
+Adapter for displaying restaurant images in a RecyclerView.
+
 ## User
 
 Data class for users.
