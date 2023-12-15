@@ -76,4 +76,86 @@ The functionality is described in more detail below:
 
 The following functions/extensions are implemented:
 
+## AllRestaurantsAdapter
 
+
+
+## User
+
+Data class for users.
+
+## UserRepository
+
+Manages user authentication and registration using Firebase.
+
+init:
+
+Initialize the user LiveData based on the current Firebase authenticated user.
+
+login: 
+
+Authenticates a user using email and password.
+
+register: 
+
+Registers a new user using email and password.
+
+saveUserToDatabase: 
+
+Saves the authenticated user's details to Firebase Database.
+
+logout: 
+
+Logs out the authenticated user.
+
+## UserRepositorySingleton
+
+Provides a singleton instance of UserRepository.
+
+## UserScreen
+
+Fragment for user authentication including sign in, sign up, and sign out.
+
+onCreateView: 
+
+Inflates the layout and initializes UI components.
+
+onViewCreated: 
+
+Sets up UI behavior and event listeners.
+
+onDestroyView: 
+
+Removes observers when the view is destroyed.
+
+onSignInClicked: 
+
+Handles sign in button click.
+
+onSignUpClicked: 
+
+Handles sign up button click.
+
+onSignOutClicked: 
+
+Handles sign out button click.
+
+## UserViewModel
+
+ViewModel for managing user authentication and registration.
+
+login: 
+
+Attempts to log in the user with the provided email and password.
+
+register: 
+
+Attempts to register a new user with the provided email and password.
+
+logout: 
+
+Logs out the current authenticated user.
+
+## UserViewModelFactory
+
+Factory class for creating instances of UserViewModel.
