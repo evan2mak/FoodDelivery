@@ -329,6 +329,10 @@ Here is a screenshot of the notification after the previous order:
 
 ![Screenshot 2023-12-15 113716](https://github.com/evan2mak/FoodDelivery/assets/128643914/a0035060-aef7-4320-a858-8884623b81ec)
 
+Here is a screenshot of my Firebase:
+
+![Screenshot 2023-12-15 114137](https://github.com/evan2mak/FoodDelivery/assets/128643914/602f3295-812e-47dd-b6f3-16a15c119a64)
+
 
 ## License
 
