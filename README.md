@@ -311,6 +311,19 @@ This was a challenge! I had a lot of trouble, so the whole thing was hard. The r
 
 # Video Walkthroughs
 
+Here's a walkthrough of implemented user stories:
+
+This clip shows email/password validation edge cases.
+
+![studio64_AH3GhLszgZ](https://github.com/evan2mak/Notes2/assets/128643914/bfb24855-dd2c-48cc-bdc7-78030e977dfe)
+
+This clip shows the home screen. It shows the navigation drawer with all of its components and also shows how to scroll for recent restaurants.
+
+![studio64_khWjrSPOgB](https://github.com/evan2mak/FoodDelivery/assets/128643914/7ca6d09b-07c8-4637-9533-ad3d4b109f67)
+
+Here is the ordering process. Should cover all edge cases. 
+
+![studio64_xWBIduWRJA](https://github.com/evan2mak/FoodDelivery/assets/128643914/1fa475f5-e3d6-4f63-8e83-c5bedda6e36a)
 
 
 
