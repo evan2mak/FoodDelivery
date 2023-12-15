@@ -116,7 +116,7 @@ onBindViewHolder: Binds data to the ViewHolder for a specific item in the Recycl
 
 getItemCount: Returns the total number of food items in the RecyclerView.
 
-# CheckoutFragment
+## CheckoutFragment
 
 Fragment responsible for managing the checkout process.
 
@@ -303,3 +303,30 @@ Logs out the current authenticated user.
 ## UserViewModelFactory
 
 Factory class for creating instances of UserViewModel.
+
+## Notes
+
+This was a challenge! I had a lot of trouble, so the whole thing was hard. The really hard part was tracking and loading images for each restaurant. The calendar view took a lot of work as well. This one was tough, but interesting. Had a great semester! Thank you.
+
+
+# Video Walkthroughs
+
+
+
+
+## License
+
+    Copyright 2023 Evan Tomak.
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express implied.
+
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
