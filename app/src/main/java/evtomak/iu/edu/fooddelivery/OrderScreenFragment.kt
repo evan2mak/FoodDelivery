@@ -16,6 +16,7 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
+// OrderScreenFragment: Displays order details and allows tracking of orders.
 class OrderScreenFragment : Fragment() {
     private val viewModel: OrderViewModel by activityViewModels()
 
@@ -65,6 +66,7 @@ class OrderScreenFragment : Fragment() {
         }
     }
 
+    // getOrderDetails: Get a formatted string representing order details.
     private fun getOrderDetails(order: Order): String {
         val orderItems = order.orderItems
         val orderDetails = StringBuilder()
@@ -80,12 +82,14 @@ class OrderScreenFragment : Fragment() {
         return orderDetails.toString()
     }
 
+    // formatOrderTime: Format the order time as a string.
     private fun formatOrderTime(orderTime: Long): String {
         val dateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault())
         val orderDate = Date(orderTime)
         return dateFormat.format(orderDate)
     }
 
+    // showTrackOrderDialog: Display a dialog for tracking the order.
     private fun showTrackOrderDialog() {
         val dialog = Dialog(requireContext())
         dialog.setContentView(R.layout.dialog_track_order)

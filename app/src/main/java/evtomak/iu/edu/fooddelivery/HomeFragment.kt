@@ -12,8 +12,8 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.FirebaseDatabase
 
+// HomeFragment: Represents the home screen of the application.
 class HomeFragment : Fragment() {
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var actionBarDrawerToggle: ActionBarDrawerToggle
@@ -24,6 +24,7 @@ class HomeFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
+        // Initialize RecentRestaurantsFragment and replace the corresponding container.
         val recentRestaurantsFragment = RecentRestaurantsFragment.newInstance()
         val recentRestaurantsTransaction = childFragmentManager.beginTransaction()
         recentRestaurantsTransaction.replace(
@@ -32,6 +33,7 @@ class HomeFragment : Fragment() {
         )
         recentRestaurantsTransaction.commit()
 
+        // Initialize AllRestaurantsFragment and replace the corresponding container.
         val allRestaurantsFragment = AllRestaurantsFragment.newInstance()
         val allRestaurantsTransaction = childFragmentManager.beginTransaction()
         allRestaurantsTransaction.replace(
@@ -57,6 +59,7 @@ class HomeFragment : Fragment() {
 
         val navigationView = view.findViewById<NavigationView>(R.id.navigationView)
 
+        // Set navigation item selection listener.
         navigationView.setNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.nav_home -> {
@@ -86,4 +89,3 @@ class HomeFragment : Fragment() {
         return view
     }
 }
-

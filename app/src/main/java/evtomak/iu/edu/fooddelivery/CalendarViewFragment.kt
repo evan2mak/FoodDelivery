@@ -15,12 +15,14 @@ import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
 
+// CalendarViewFragment: Fragment responsible for displaying a calendar view and calculating total spent.
 class CalendarViewFragment : Fragment() {
     private lateinit var calendarView: CalendarView
     private val userId = FirebaseAuth.getInstance().currentUser?.uid ?: ""
     private val databaseReference = FirebaseDatabase.getInstance().reference
     private var valueEventListener: ValueEventListener? = null
 
+    // onCreateView: Inflates the fragment's layout and sets up the calendar view and button click listener.
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -28,6 +30,7 @@ class CalendarViewFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_calendar_view, container, false)
         calendarView = view.findViewById(R.id.calendarView)
 
+        // Set up the date change listener for the calendar view.
         calendarView.setOnDateChangeListener { _, year, month, dayOfMonth ->
             val calendar = Calendar.getInstance()
             calendar.set(Calendar.YEAR, year)
@@ -37,17 +40,20 @@ class CalendarViewFragment : Fragment() {
             val selectedDate = calendar.time
             val formattedDate = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(selectedDate)
 
+            // Calculate and display the total spent for the selected date.
             calculateTotalSpent(formattedDate)
         }
 
         val homeButton = view.findViewById<Button>(R.id.buttonHome)
         homeButton.setOnClickListener {
+            // Navigate back to the HomeFragment when the home button is clicked.
             findNavController().navigate(R.id.calendarViewFragment_to_Home)
         }
 
         return view
     }
 
+    // calculateTotalSpent: Calculates the total amount spent by the user on a selected date range.
     private fun calculateTotalSpent(selectedDate: String) {
         val formatter = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
         val date = formatter.parse(selectedDate)
@@ -93,6 +99,7 @@ class CalendarViewFragment : Fragment() {
             .addValueEventListener(valueEventListener!!)
     }
 
+    // showTotalSpent: Displays the total amount spent as a toast message.
     private fun showTotalSpent(totalSpent: Double) {
         if (isAdded) {
             val formattedTotal = String.format("%.2f", totalSpent)
@@ -100,6 +107,7 @@ class CalendarViewFragment : Fragment() {
         }
     }
 
+    // onDestroyView: Removes the ValueEventListener to prevent memory leaks when the fragment is destroyed.
     override fun onDestroyView() {
         super.onDestroyView()
         valueEventListener?.let { databaseReference.removeEventListener(it) }

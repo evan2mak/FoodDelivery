@@ -8,6 +8,7 @@ import android.os.Looper
 import android.util.Log
 import java.util.*
 
+// DeliveryService: A background service for simulating food delivery with a timer.
 class DeliveryService : Service() {
 
     companion object {
@@ -25,18 +26,18 @@ class DeliveryService : Service() {
         if (intent != null && intent.hasExtra(EXTRA_DELIVERY_TIME)) {
             val deliveryTimeMillis = intent.getLongExtra(EXTRA_DELIVERY_TIME, 0)
             if (deliveryTimeMillis > 0) {
+                // Schedule a delivery completion task after the specified delivery time.
                 deliveryHandler.postDelayed({
                     Log.i("DeliveryService", "Delivery time is over, generate a notification")
-                    stopSelf()
+                    stopSelf() // Stop the service after delivery completion.
                 }, deliveryTimeMillis)
             } else {
                 Log.e("DeliveryService", "Invalid delivery time")
-                stopSelf()
+                stopSelf() // Stop the service due to an error.
             }
-        }
-        else {
+        } else {
             Log.e("DeliveryService", "No delivery time provided")
-            stopSelf()
+            stopSelf() // Stop the service if no delivery time is provided.
         }
         return START_NOT_STICKY
     }

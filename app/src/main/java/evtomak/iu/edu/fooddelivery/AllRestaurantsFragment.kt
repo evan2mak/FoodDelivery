@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.*
 
+// AllRestaurantsFragment: Fragment responsible for displaying a list of all restaurants.
 class AllRestaurantsFragment : Fragment() {
 
     private val allRestaurantList = mutableListOf<String>()
@@ -38,6 +39,7 @@ class AllRestaurantsFragment : Fragment() {
                         val bundle = Bundle()
                         bundle.putString("restaurantId", it)
 
+                        // Find the parent fragment's NavController and navigate to the restaurantFragment
                         val navController = (parentFragment as? HomeFragment)?.findNavController()
                         navController?.navigate(R.id.action_homeFragment_to_restaurantFragment, bundle)
                     }

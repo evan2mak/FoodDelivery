@@ -25,6 +25,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import java.util.*
 
+// CheckoutFragment: Fragment responsible for managing the checkout process.
 class CheckoutFragment : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
@@ -120,6 +121,7 @@ class CheckoutFragment : Fragment() {
         return view
     }
 
+    // calculateTotalAmount: Calculates the total amount for the food items in the order.
     private fun calculateTotalAmount(foodItems: List<OrderItem>): Double {
         var totalAmount = 0.0
         for (foodItem in foodItems) {
@@ -128,6 +130,7 @@ class CheckoutFragment : Fragment() {
         return totalAmount
     }
 
+    // startDeliveryTimer: Initiates the delivery timer and service.
     private fun startDeliveryTimer() {
         val random = Random()
         val deliveryTimeSeconds = random.nextInt(16) + 15 // 15 to 30 seconds
@@ -141,6 +144,7 @@ class CheckoutFragment : Fragment() {
         }, deliveryTimeMillis)
     }
 
+    // createDeliveryNotification: Creates a delivery notification.
     @SuppressLint("MissingPermission")
     private fun createDeliveryNotification() {
         val notificationId = 1
@@ -152,7 +156,7 @@ class CheckoutFragment : Fragment() {
             val notificationBuilder = NotificationCompat.Builder(requireContext(), channelId)
                 .setSmallIcon(com.google.android.material.R.drawable.ic_clock_black_24dp)
                 .setContentTitle("Your food has arrived!")
-                .setContentText("Enjoy your meal from.")
+                .setContentText("Enjoy your meal from $restaurantName.")
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {

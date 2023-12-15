@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.*
 
+// Fragment for displaying recent restaurant items and navigating to restaurant details.
 class RecentRestaurantsFragment : Fragment() {
 
     private val recentRestaurantList = mutableListOf<String>()

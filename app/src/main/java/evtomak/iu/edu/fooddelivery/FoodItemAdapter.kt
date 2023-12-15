@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
+// FoodItemAdapter: Manages the RecyclerView adapter for displaying food items.
 class FoodItemAdapter(private val foodItems: MutableList<OrderItem>) :
     RecyclerView.Adapter<FoodItemAdapter.ViewHolder>() {
 
@@ -18,12 +19,14 @@ class FoodItemAdapter(private val foodItems: MutableList<OrderItem>) :
         val decrementButton: Button = itemView.findViewById(R.id.btnDecrement)
     }
 
+    // onCreateViewHolder: Creates a new ViewHolder instance for each item in the RecyclerView.
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_food_item, parent, false)
         return ViewHolder(view)
     }
 
+    // onBindViewHolder: Binds data to the ViewHolder for a specific item in the RecyclerView.
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val foodItem = foodItems[position]
         holder.foodNameTextView.text = foodItem.foodName
@@ -43,6 +46,7 @@ class FoodItemAdapter(private val foodItems: MutableList<OrderItem>) :
         }
     }
 
+    // getItemCount: Returns the total number of food items in the RecyclerView.
     override fun getItemCount(): Int {
         return foodItems.size
     }

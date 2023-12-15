@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.google.firebase.database.*
 
+// Fragment for displaying restaurant details and food items.
 class RestaurantFragment : Fragment() {
 
     private lateinit var restaurantId: String
@@ -72,6 +73,7 @@ class RestaurantFragment : Fragment() {
         return view
     }
 
+    // Function to load food items from Firebase
     private fun loadFoodItems(adapter: FoodItemAdapter) {
         foodItemsRef.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
@@ -94,6 +96,8 @@ class RestaurantFragment : Fragment() {
             }
         })
     }
+
+    // Function to retrieve restaurant images based on restaurant ID
     private fun getRestaurantImages(restaurantId: String): List<Int> {
         if (restaurantId == "restaurantId1") {
             return listOf(R.drawable.dominos1, R.drawable.dominos2, R.drawable.dominos3)

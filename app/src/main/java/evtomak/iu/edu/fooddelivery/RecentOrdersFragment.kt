@@ -16,13 +16,12 @@ import com.google.firebase.database.ValueEventListener
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 
-
+// Fragment responsible for displaying the user's recent orders.
 class RecentOrdersFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
-    private val ordersAdapter = OrdersAdapter()
+    private val ordersAdapter = OrdersAdapter() // Adapter to display orders
     private val databaseReference = FirebaseDatabase.getInstance().reference
     private val userId = FirebaseAuth.getInstance().currentUser?.uid ?: ""
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
@@ -30,8 +29,8 @@ class RecentOrdersFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_orders, container, false)
         recyclerView = view.findViewById(R.id.ordersRecyclerView)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        recyclerView.adapter = ordersAdapter
-        loadOrders()
+        recyclerView.adapter = ordersAdapter // Set the adapter for displaying orders
+        loadOrders() // Load and display the user's orders
 
         val homeButton = view.findViewById<Button>(R.id.buttonHome)
         homeButton.setOnClickListener {
@@ -42,14 +41,19 @@ class RecentOrdersFragment : Fragment() {
     }
 
     private fun loadOrders() {
+        // Query the database to retrieve the user's orders
         databaseReference.child("orders").orderByChild("userId").equalTo(userId)
             .addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
                     val orders = mutableListOf<Order>()
+
+                    // Iterate through the retrieved data and convert it into Order objects
                     dataSnapshot.children.forEach { snapshot ->
                         val order = snapshot.getValue(Order::class.java)
                         order?.let { orders.add(it) }
                     }
+
+                    // Update the adapter with the list of orders to display them
                     ordersAdapter.setOrders(orders)
                 }
 
@@ -58,5 +62,3 @@ class RecentOrdersFragment : Fragment() {
             })
     }
 }
-
-
