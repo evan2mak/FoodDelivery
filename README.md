@@ -325,6 +325,9 @@ Here is the ordering process. Should cover all edge cases.
 
 ![studio64_xWBIduWRJA](https://github.com/evan2mak/FoodDelivery/assets/128643914/1fa475f5-e3d6-4f63-8e83-c5bedda6e36a)
 
+Here is a screenshot of the notification after the previous order:
+
+![Screenshot 2023-12-15 113716](https://github.com/evan2mak/FoodDelivery/assets/128643914/a0035060-aef7-4320-a858-8884623b81ec)
 
 
 ## License
